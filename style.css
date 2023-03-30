@@ -1,5 +1,18 @@
-header {color: #000;}
-body {background-color: rgb(223, 218, 197);}
-h1{color: rgb(89, 159, 202);text-align: center;}
-h2{color: #9a825b;}
+body {background-color: rgb(47, 46, 42);}
+h1{
+    color: rgb(47, 46, 42);
+    background-color: rgb(149, 155, 185);
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h2{
+    color: #79746a
+}
+p{
+    color: #79746a;
+    text-align: center;
+    font-family:sans-serif;
+    padding: 15px;
+    background-color:rgb(149, 155, 185) ;
+}
 h3{color: #9a825b;}
