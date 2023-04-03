@@ -30,11 +30,12 @@ h2 {
     color: #d5d5d4;
     font-family:sans-serif;
 }
-p {
+h3 {
     color: #d5d5d4;
     text-align: center;
     font-family:sans-serif;
 }
-h3 {
-    color: #79746a;
+th {
+    color: #d5d5d4;
+    padding: 15px;
 }
