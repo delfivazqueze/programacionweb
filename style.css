@@ -1,8 +1,4 @@
-.Envíos {
-    padding: 1px;
-    background-color: #d5d5d4;
-    color: rgb(47, 46, 42);
-}
+
 .Header{
     position: sticky;
     top: 0;
@@ -12,12 +8,11 @@
     font-family: 'Rock Salt', cursive;
 }
 .Footer {
-    background-color: #d5d5d4;
+    background-color: #afafad;
     padding: 1px;
-    border-left: 3px;
 }
 body {
-    background-color: rgb(47, 46, 42);
+    background-color: #d5d5d4;
     padding: 0px;
     margin: 0px;
     border: 0px;
@@ -28,15 +23,8 @@ body {
 .EnvíosGratis{
     color: rgb(47, 46, 42);
     text-align: center;
-}
-h2 {
-    color: #d5d5d4;
-    font-family:sans-serif;
-}
-h3 {
-    color: #d5d5d4;
-    text-align: center;
-    font-family:sans-serif;
+    padding: 1px;
+    background-color: #d5d5d4;
 }
 th {
     color: rgb(47, 46, 42);
@@ -46,8 +34,9 @@ th {
     text-align:left;
     color: rgb(47, 46, 42);
     font-family:sans-serif;
+    background-color: #afafad;
 }
-h4 {
+p {
     text-align:left;
     color: rgb(47, 46, 42);
     font-family:sans-serif;

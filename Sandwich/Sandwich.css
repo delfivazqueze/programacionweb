@@ -1,0 +1,21 @@
+body {
+    background-color: #d5d5d4;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
+.Header{
+    position: sticky;
+    top: 0;
+    color: #d5d5d4;
+    background-color: rgb(47, 46, 42);
+    padding: 2px;
+    font-family: 'Rock Salt', cursive;
+}
+td {
+    padding: 5px;
+    background-color: #afafad;
+}
+h3 {
+    color: rgb(47, 46, 42);
+}
