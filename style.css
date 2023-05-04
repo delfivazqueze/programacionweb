@@ -22,25 +22,31 @@ body{
 .Envíos { 
     grid-area: Envíos; 
 }
-.flex-evios{
+.Envíos > div{
     display: flex;
     justify-content: center;
 }
 .envios{
-    color: rgb(74, 40, 209);
+    color: rgb(47, 46, 42);
     background-color: #d5d5d4;
     margin: 0px;
-    padding: 3px;
+    padding: 4px;
+    font-family:"Montserrat",Sans-serif;
+    font-size: 13px;
 }
 .Header { 
     grid-area: Header; 
     display: flex;
+    justify-content:space-between;
+    align-items: center;
     position: sticky;
     top: 0;
     color: #d5d5d4;
     background-color: rgb(47, 46, 42);
     padding: 2px;
-    font-family: 'Rock Salt', cursive;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Ysabeau', sans-serif;
 }
 .Pasos { 
     grid-area: Pasos; 
