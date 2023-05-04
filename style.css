@@ -1,4 +1,4 @@
-body{
+body {
     background-color: #d5d5d4;
     padding: 0px;
     margin: 0px;
@@ -22,11 +22,11 @@ body{
 .Envíos { 
     grid-area: Envíos; 
 }
-.Envíos > div{
+.Envíos > div {
     display: flex;
     justify-content: center;
 }
-.envios{
+.envios {
     color: rgb(47, 46, 42);
     background-color: #d5d5d4;
     margin: 0px;
@@ -50,6 +50,9 @@ body{
 }
 .Pasos { 
     grid-area: Pasos; 
+}
+.Pasos > div {
+    display: flex;
 }
 .Imagenes { 
     grid-area: Imagenes; 
