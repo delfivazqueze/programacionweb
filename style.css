@@ -1,5 +1,40 @@
+body{
+    background-color: #d5d5d4;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+}
 
-.Header{
+.container {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.01fr 0.02fr 1fr 1fr 0.3fr 0.2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Envíos Envíos Envíos"
+      "Header Header Header"
+      "Pasos Imagenes Imagenes"
+      "Pasos Imagenes Imagenes"
+      "Novedades Novedades Novedades"
+      "Contacto Contacto Contacto";
+}
+.Envíos { 
+    grid-area: Envíos; 
+}
+.flex-evios{
+    display: flex;
+    justify-content: center;
+}
+.envios{
+    color: rgb(74, 40, 209);
+    background-color: #d5d5d4;
+    margin: 0px;
+    padding: 3px;
+}
+.Header { 
+    grid-area: Header; 
+    display: flex;
     position: sticky;
     top: 0;
     color: #d5d5d4;
@@ -7,37 +42,38 @@
     padding: 2px;
     font-family: 'Rock Salt', cursive;
 }
-.Footer {
-    background-color: #afafad;
-    padding: 1px;
+.Pasos { 
+    grid-area: Pasos; 
 }
-body {
-    background-color: #d5d5d4;
-    padding: 0px;
-    margin: 0px;
-    border: 0px;
+.Imagenes { 
+    grid-area: Imagenes; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: end;
 }
-.Imagenes {
-    background-color: #d5d5d4;
+.Novedades { 
+    grid-area: Novedades; 
+    background-color: blue;
 }
-.EnvíosGratis{
-    color: rgb(47, 46, 42);
-    text-align: center;
-    padding: 1px;
-    background-color: #d5d5d4;
-}
-th {
-    color: rgb(47, 46, 42);
-    padding: 10px;
-}
-.Contacto {
+.Contacto { 
+    grid-area: Contacto;
     text-align:left;
     color: rgb(47, 46, 42);
     font-family:sans-serif;
     background-color: #afafad;
+    padding: 1px;
+}
+
+th {
+    color: rgb(47, 46, 42);
+    padding: 10px;
 }
 p {
     text-align:left;
     color: rgb(47, 46, 42);
     font-family:sans-serif;
+}
+
+@media screen and (max-width: 500px) {
+    
 }
