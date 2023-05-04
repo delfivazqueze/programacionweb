@@ -8,7 +8,7 @@ body {
 .Container {  
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.01fr 0.02fr 0.2fr 0.2fr 0.3fr 0.2fr;
+    grid-template-rows: 0.01fr 0.02fr 0.2fr 0.2fr 0.2fr 0.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -79,7 +79,7 @@ body {
     grid-area: Novedades; 
     display: flex;
     justify-content: center;
-    background-color: rgb(156, 229, 99);
+    background-color: rgb(175, 224, 137);
     font-family:"Montserrat",Sans-serif;
     font-size: 16px;
 }
