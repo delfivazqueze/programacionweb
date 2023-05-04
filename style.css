@@ -5,10 +5,10 @@ body {
     border: 0px;
 }
 
-.container {  
+.Container {  
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.01fr 0.02fr 1fr 1fr 0.3fr 0.2fr;
+    grid-template-rows: 0.01fr 0.02fr 0.2fr 0.2fr 0.3fr 0.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -19,6 +19,7 @@ body {
       "Novedades Novedades Novedades"
       "Contacto Contacto Contacto";
 }
+
 .Envíos { 
     grid-area: Envíos; 
 }
@@ -26,7 +27,7 @@ body {
     display: flex;
     justify-content: center;
 }
-.envios {
+.texto-envios {
     color: rgb(47, 46, 42);
     background-color: #d5d5d4;
     margin: 0px;
@@ -34,6 +35,7 @@ body {
     font-family:"Montserrat",Sans-serif;
     font-size: 13px;
 }
+
 .Header { 
     grid-area: Header; 
     display: flex;
@@ -48,21 +50,32 @@ body {
     padding-right: 15px;
     font-family: 'Ysabeau', sans-serif;
 }
+
 .Pasos { 
     grid-area: Pasos; 
-}
-.Pasos > div {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
+
 .Imagenes { 
     grid-area: Imagenes; 
     display: flex;
-    flex-wrap: wrap;
-    justify-content: end;
+    display: block;
 }
+.a{
+    height: 50%;
+    width: 100%;
+}
+.b{
+    height: 50%;
+    width: 100%;
+}
+
 .Novedades { 
     grid-area: Novedades; 
-    background-color: blue;
+    background-color: rgb(255, 0, 234);
 }
 .Contacto { 
     grid-area: Contacto;
@@ -73,10 +86,6 @@ body {
     padding: 1px;
 }
 
-th {
-    color: rgb(47, 46, 42);
-    padding: 10px;
-}
 p {
     text-align:left;
     color: rgb(47, 46, 42);
