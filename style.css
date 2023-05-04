@@ -1,5 +1,5 @@
 body {
-    background-color: #d5d5d4;
+    background-color: white;
     padding: 0px;
     margin: 0px;
     border: 0px;
@@ -29,7 +29,7 @@ body {
 }
 .texto-envios {
     color: rgb(47, 46, 42);
-    background-color: #d5d5d4;
+    background-color: white;
     margin: 0px;
     padding: 4px;
     font-family:"Montserrat",Sans-serif;
@@ -43,7 +43,7 @@ body {
     align-items: center;
     position: sticky;
     top: 0;
-    color: #d5d5d4;
+    color: white;
     background-color: rgb(47, 46, 42);
     padding: 2px;
     padding-left: 15px;
@@ -57,6 +57,8 @@ body {
     align-items: center;
     justify-content: center;
     align-content: center;
+    font-family:"Montserrat",Sans-serif;
+    font-size: 16px;
 }
 
 .Imagenes { 
@@ -75,14 +77,19 @@ body {
 
 .Novedades { 
     grid-area: Novedades; 
-    background-color: rgb(255, 0, 234);
+    display: flex;
+    justify-content: center;
+    background-color: rgb(156, 229, 99);
+    font-family:"Montserrat",Sans-serif;
+    font-size: 16px;
 }
+
 .Contacto { 
     grid-area: Contacto;
     text-align:left;
     color: rgb(47, 46, 42);
     font-family:sans-serif;
-    background-color: #afafad;
+    background-color: white;
     padding: 1px;
 }
 
