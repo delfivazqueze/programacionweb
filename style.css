@@ -8,7 +8,6 @@ body {
 .Container {  
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 0.01fr 0.02fr 0.2fr 0.2fr 0.2fr 0.2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
@@ -63,14 +62,14 @@ body {
 
 .Imagenes { 
     grid-area: Imagenes; 
-    display: flex;
     display: block;
+    max-height: 503px;
 }
-.a{
+.a {
     height: 50%;
     width: 100%;
 }
-.b{
+.b {
     height: 50%;
     width: 100%;
 }
@@ -79,9 +78,17 @@ body {
     grid-area: Novedades; 
     display: flex;
     justify-content: center;
-    background-color: rgb(175, 224, 137);
-    font-family:"Montserrat",Sans-serif;
+    align-items: center;
+    align-content: center;
+    margin: 0px;
+    background-color: rgb(165, 193, 145);
+    text-align: center;
     font-size: 16px;
+    padding: 50px;
+}
+.c {
+    font-family:"Montserrat",Sans-serif;
+    margin-top: 0px;
 }
 
 .Contacto { 
@@ -89,14 +96,12 @@ body {
     text-align:left;
     color: rgb(47, 46, 42);
     font-family:sans-serif;
-    background-color: white;
+    background-color: rgb(190, 182, 182);
     padding: 1px;
+    padding-left: 15px;
 }
-
-p {
-    text-align:left;
-    color: rgb(47, 46, 42);
-    font-family:sans-serif;
+.info {
+    display: inline;
 }
 
 @media screen and (max-width: 500px) {
