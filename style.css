@@ -48,6 +48,11 @@ body {
     padding-left: 15px;
     padding-right: 15px;
     font-family: 'Ysabeau', sans-serif;
+    font-size: 15px;
+}
+.botones {
+    width: 50px;
+    height: 50px;
 }
 
 .Pasos { 
@@ -65,13 +70,9 @@ body {
     display: block;
     max-height: 503px;
 }
-.a {
+.tamaño-foto {
+    width: 50%;
     height: 50%;
-    width: 100%;
-}
-.b {
-    height: 50%;
-    width: 100%;
 }
 
 .Novedades { 
@@ -104,6 +105,113 @@ body {
     display: inline;
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
+    body {
+        background-color: white;
+        padding: 0px;
+        margin: 0px;
+        border: 0px;
+    }
     
+    .Container {  
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+          "Envíos Envíos Envíos"
+          "Header Header Header"
+          "Pasos Imagenes Imagenes"
+          "Pasos Imagenes Imagenes"
+          "Novedades Novedades Novedades"
+          "Contacto Contacto Contacto";
+    }
+    
+    .Envíos { 
+        grid-area: Envíos; 
+    }
+    .Envíos > div {
+        display: flex;
+        justify-content: center;
+    }
+    .texto-envios {
+        color: rgb(47, 46, 42);
+        background-color: white;
+        margin: 0px;
+        padding: 4px;
+        font-family:"Montserrat",Sans-serif;
+        font-size: 12px;
+    }
+    
+    .Header { 
+        grid-area: Header; 
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        color: white;
+        background-color: rgb(47, 46, 42);
+        padding: 2px;
+        padding-left: 15px;
+        padding-right: 15px;
+        font-family: 'Ysabeau', sans-serif;
+        font-size: 12px;
+    }
+    .botones {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .Pasos { 
+        grid-area: Pasos; 
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-content: center;
+        font-family:"Montserrat",Sans-serif;
+        font-size: 12px;
+        margin: 10px;
+    }
+    
+    .Imagenes { 
+        grid-area: Imagenes; 
+        display: block;
+        max-height: 503px;
+    }
+    .tamaño-foto {
+        width: 50%;
+        height: 50%;
+    }
+    
+    .Novedades { 
+        grid-area: Novedades; 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        margin: 0px;
+        background-color: rgb(165, 193, 145);
+        text-align: center;
+        font-size: 12px;
+        padding: 50px;
+    }
+    .c {
+        font-family:"Montserrat",Sans-serif;
+        margin-top: 0px;
+    }
+    
+    .Contacto { 
+        grid-area: Contacto;
+        text-align:left;
+        color: rgb(47, 46, 42);
+        font-family:sans-serif;
+        background-color: rgb(190, 182, 182);
+        padding: 1px;
+        padding-left: 15px;
+        font-size: 12px;
+    }
+    .info {
+        display: inline;
+    }
 }
