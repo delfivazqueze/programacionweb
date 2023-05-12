@@ -105,7 +105,7 @@ body {
     display: inline;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 720px) {
     body {
         background-color: white;
         padding: 0px;
@@ -115,16 +115,16 @@ body {
     
     .Container {  
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         gap: 0px 0px;
         grid-auto-flow: row;
         grid-template-areas:
-          "Envíos Envíos Envíos"
-          "Header Header Header"
-          "Pasos Imagenes Imagenes"
-          "Pasos Imagenes Imagenes"
-          "Novedades Novedades Novedades"
-          "Contacto Contacto Contacto";
+          "Envíos Envíos"
+          "Header Header"
+          "Pasos Pasos"
+          "Imagenes Imagenes"
+          "Novedades Novedades"
+          "Contacto Contacto";
     }
     
     .Envíos { 
