@@ -1,17 +1,72 @@
 body {
-    background-color: #d5d5d4;
+    background-color: white;
     padding: 0px;
     margin: 0px;
     border: 0px;
 }
-.Header{
+
+.Container {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "Header Header Header"
+      "Opciones Opciones Opciones"
+      "Imagenes Imagenes Imagenes"
+      "Imagenes Imagenes Imagenes"
+      "Contacto Contacto Contacto";
+}
+
+.Header {  
+    grid-area: Header; 
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
     position: sticky;
     top: 0;
-    color: #d5d5d4;
+    color: white;
     background-color: rgb(47, 46, 42);
     padding: 2px;
-    font-family: 'Rock Salt', cursive;
+    padding-left: 15px;
+    padding-right: 15px;
+    font-family: 'Ysabeau', sans-serif;
+    font-size: 15px;
 }
+.botones {
+    width: 50px;
+    height: 50px;
+}
+
+.Opciones{
+    grid-area: Opciones;
+    display: flex;
+    background-color: blueviolet;
+}
+.ELeccion {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    background-color: rgb(43, 226, 153);
+}
+
+
+.Imagenes {
+    grid-area: Imagenes;
+}
+
+.Contacto { 
+    grid-area: Contacto;
+    text-align:left;
+    color: rgb(47, 46, 42);
+    font-family:sans-serif;
+    background-color: rgb(190, 182, 182);
+    padding: 1px;
+    padding-left: 15px;
+}
+
+
+
 td {
     padding: 5px;
     background-color: #afafad;
