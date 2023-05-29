@@ -67,8 +67,6 @@ body {
 
 .Imagenes { 
     grid-area: Imagenes; 
-    display: block;
-    max-height: 503px;
 }
 .tamaño-foto {
     width: 50%;
