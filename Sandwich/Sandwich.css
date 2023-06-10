@@ -40,16 +40,27 @@ body {
 .Opciones{
     grid-area: Opciones;
     display: flex;
-    background-color: rgb(141, 182, 119);
+    background-color: rgb(165, 193, 145);
 }
-.link :visited{
-    
+.linkPpal {
+    text-decoration: none;
+    color:rgb(47, 46, 42);
+    font-family:sans-serif;
+    padding: 5px;
+    font-weight: bold;
+    width: 10%;
 }
-
-.ELeccion {
+.Eleccion {
     display: flex;
-    justify-content:space-between;
+    width: 80%;
+    justify-content: space-around;
     align-items: center;
+}
+.link {
+    text-decoration: none;
+    color:rgb(47, 46, 42);
+    font-family:sans-serif;
+    padding: 5px;
 }
 
 .Imagenes {
