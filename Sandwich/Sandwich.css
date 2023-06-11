@@ -40,7 +40,7 @@ body {
 .Opciones{
     grid-area: Opciones;
     display: flex;
-    background-color: rgb(165, 193, 145);
+    background-color: rgb(165, 193, 145); 
 }
 .linkPpal {
     text-decoration: none;
