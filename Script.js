@@ -9,5 +9,6 @@ function suscribir() {
   else{
     alert(`Correo electrónico guardado: ${email}`);
   }
+  
   emailInput.value = '';
 }
