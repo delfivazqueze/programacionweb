@@ -14,7 +14,6 @@ body {
       "Envíos Envíos Envíos"
       "Header Header Header"
       "Pasos Imagenes Imagenes"
-      "Pasos Imagenes Imagenes"
       "Novedades Novedades Novedades"
       "Contacto Contacto Contacto";
 }
@@ -67,10 +66,16 @@ body {
 
 .Imagenes { 
     grid-area: Imagenes; 
+    height: 100%;
+}
+.todo {
+    display: flex;
+    width: auto;
+    height: 100%;
 }
 .tamaño-foto {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
 }
 
 .Novedades { 
@@ -80,37 +85,41 @@ body {
     align-items: center;
     align-content: center;
     margin: 0px;
-    background-color: rgb(111, 69, 69);
+    background-color:rgb(164,162,162) ;
     text-align: center;
     font-size: 16px;
-    padding: 50px;
-}
-.c {
-    font-family:"Montserrat",Sans-serif;
-    margin-top: 0px;
+    padding: 20px;
 }
 
-.Contacto { 
+.Footer { 
     grid-area: Contacto;
-    text-align:left;
-    color: rgb(47, 46, 42);
+    display: flex;
+    color: white;
     font-family:sans-serif;
-    background-color: rgb(190, 182, 182);
-    padding: 1px;
-    padding-left: 15px;
+    padding: 15px;
+    background-color: rgb(47, 46, 42);
 }
-.info {
-    display: inline;
+.Conta-Prod {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:"Montserrat",Sans-serif;
+    font-size: 14px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-bottom: 5px;
 }
 
-@media screen and (max-width: 720px) {
-    body {
-        background-color: white;
-        padding: 0px;
-        margin: 0px;
-        border: 0px;
-    }
-    
+
+
+@media screen and (max-width: 1020px) {
     .Container {  
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -125,35 +134,11 @@ body {
           "Contacto Contacto";
     }
     
-    .Envíos { 
-        grid-area: Envíos; 
-    }
-    .Envíos > div {
-        display: flex;
-        justify-content: center;
-    }
     .texto-envios {
-        color: rgb(47, 46, 42);
-        background-color: white;
-        margin: 0px;
-        padding: 4px;
-        font-family:"Montserrat",Sans-serif;
-        font-size: 12px;
+        font-size: 11px;
     }
     
     .Header { 
-        grid-area: Header; 
-        display: flex;
-        justify-content:space-between;
-        align-items: center;
-        position: sticky;
-        top: 0;
-        color: white;
-        background-color: rgb(47, 46, 42);
-        padding: 2px;
-        padding-left: 15px;
-        padding-right: 15px;
-        font-family: 'Ysabeau', sans-serif;
         font-size: 12px;
     }
     .botones {
@@ -162,54 +147,19 @@ body {
     }
     
     .Pasos { 
-        grid-area: Pasos; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        align-content: center;
-        font-family:"Montserrat",Sans-serif;
         font-size: 12px;
         margin: 10px;
     }
     
-    .Imagenes { 
-        grid-area: Imagenes; 
-        display: block;
+    .Imagenes {  
         max-height: 503px;
-    }
-    .tamaño-foto {
-        width: 50%;
-        height: 50%;
     }
     
     .Novedades { 
-        grid-area: Novedades; 
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        align-content: center;
-        margin: 0px;
-        background-color: rgb(165, 193, 145);
-        text-align: center;
-        font-size: 12px;
-        padding: 50px;
-    }
-    .c {
-        font-family:"Montserrat",Sans-serif;
-        margin-top: 0px;
+        font-size: 14px;
     }
     
-    .Contacto { 
-        grid-area: Contacto;
-        text-align:left;
-        color: rgb(47, 46, 42);
-        font-family:sans-serif;
-        background-color: rgb(190, 182, 182);
-        padding: 1px;
-        padding-left: 15px;
+    .Conta-Prod {
         font-size: 12px;
-    }
-    .info {
-        display: inline;
     }
 }

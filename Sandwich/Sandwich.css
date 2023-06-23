@@ -35,40 +35,59 @@ body {
 
 .container {
     display: flex;
+    text-align: center;
+    justify-content: space-evenly;
 }
 .formato {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 592px;
 }
-
 .texto {
+    position: absolute;
     padding: 5px;
     background-color: rgb(111, 69, 69);
     border-radius: 10px;
     text-align: center;
+    padding-left: 50px;
+    padding-right: 50px;
 }
-.link {
+#link {
     text-decoration: none;
     color:#fbebde;
     font-family:sans-serif;
 }
 .tamaño-fotos{
-    width: auto;
+    width: 100%;
     height: 100%;
 }
 
-.Contacto { 
-    text-align:left;
-    color: rgb(47, 46, 42);
+.Footer { 
+    display: flex;
+    color: white;
     font-family:sans-serif;
-    background-color: rgb(190, 182, 182);
-    padding: 1px;
-    padding-left: 15px;
-} 
+    padding-bottom: 20px;
+    background-color: rgb(47, 46, 42);
+}
+.Conta-Prod {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-bottom: 5px;
+}
 
 
-
-  
+@media screen and (max-width: 720px) {
+    
+}
   
