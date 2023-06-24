@@ -50,8 +50,7 @@ body {
     background-color: rgb(111, 69, 69);
     border-radius: 10px;
     text-align: center;
-    padding-left: 50px;
-    padding-right: 50px;
+    width: 18%;
 }
 #link {
     text-decoration: none;
@@ -88,6 +87,6 @@ li {
 
 
 @media screen and (max-width: 720px) {
-    
+
 }
   

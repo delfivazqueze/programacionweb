@@ -5,23 +5,7 @@ body {
     border: 0px;
 }
 
-.Container {  
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "Envíos Envíos Envíos"
-      "Header Header Header"
-      "Pasos Imagenes Imagenes"
-      "Novedades Novedades Novedades"
-      "Contacto Contacto Contacto";
-}
-
-.Envíos { 
-    grid-area: Envíos; 
-}
-.Envíos > div {
+.Envíos {
     display: flex;
     justify-content: center;
 }
@@ -35,7 +19,6 @@ body {
 }
 
 .Header { 
-    grid-area: Header; 
     display: flex;
     justify-content:space-between;
     align-items: center;
@@ -54,32 +37,15 @@ body {
     height: 50px;
 }
 
-.Pasos { 
-    grid-area: Pasos; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    font-family:"Montserrat",Sans-serif;
-    font-size: 16px;
-}
-
 .Imagenes { 
-    grid-area: Imagenes; 
-    height: 100%;
-}
-.todo {
     display: flex;
-    width: auto;
-    height: 100%;
 }
 .tamaño-foto {
     width: 100%;
     height: 100%;
 }
 
-.Novedades { 
-    grid-area: Novedades; 
+.Novedades {  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +58,6 @@ body {
 }
 
 .Footer { 
-    grid-area: Contacto;
     display: flex;
     color: white;
     font-family:sans-serif;
@@ -118,22 +83,7 @@ li {
 }
 
 
-
-@media screen and (max-width: 1020px) {
-    .Container {  
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0px 0px;
-        grid-auto-flow: row;
-        grid-template-areas:
-          "Envíos Envíos"
-          "Header Header"
-          "Pasos Pasos"
-          "Imagenes Imagenes"
-          "Novedades Novedades"
-          "Contacto Contacto";
-    }
-    
+@media screen and (max-width: 1100px) {
     .texto-envios {
         font-size: 11px;
     }
@@ -145,16 +95,7 @@ li {
         width: 35px;
         height: 35px;
     }
-    
-    .Pasos { 
-        font-size: 12px;
-        margin: 10px;
-    }
-    
-    .Imagenes {  
-        max-height: 503px;
-    }
-    
+
     .Novedades { 
         font-size: 14px;
     }
