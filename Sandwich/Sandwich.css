@@ -59,7 +59,7 @@ body {
 }
 .tamaño-fotos{
     width: 100%;
-    height: 100%;
+    height: 85%;
 }
 
 .Footer { 
@@ -100,7 +100,7 @@ li {
         align-items: center;
     }
     .formato {
-        width: 60%;
+        width: 400px;
     }
 
     .Conta-Prod {
