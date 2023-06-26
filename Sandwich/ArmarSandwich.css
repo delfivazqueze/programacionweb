@@ -35,3 +35,11 @@ body {
     font-weight: bold;
     width: 10%;
 }
+
+.frase {
+    display: flex;
+    justify-content: center;
+    font-family:"Montserrat",Sans-serif;
+    background-color: rgb(203, 163, 172);
+}
+

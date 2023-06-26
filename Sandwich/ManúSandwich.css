@@ -35,3 +35,27 @@ body {
     font-weight: bold;
     width: 10%;
 }
+
+.pedido {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+.precio {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(203, 163, 172);
+}
+.listado {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.h {
+    margin: 5px;
+}
