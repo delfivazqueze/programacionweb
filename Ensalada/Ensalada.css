@@ -43,6 +43,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 592px;
+    width: 400px;
 }
 .texto {
     position: absolute;
