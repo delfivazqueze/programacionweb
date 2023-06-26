@@ -32,3 +32,32 @@ body {
     font-weight: bold;
     width: 10%;
 }
+
+.Footer { 
+    display: flex;
+    color: white;
+    font-family:sans-serif;
+    padding: 15px;
+    background-color: rgb(47, 46, 42);
+}
+.Conta-Prod {
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family:"Montserrat",Sans-serif;
+    font-size: 14px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li {
+    margin-bottom: 5px;
+}
+.linkFooter {
+    text-decoration: none;
+    color: white;
+}
