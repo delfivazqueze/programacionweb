@@ -12,3 +12,9 @@ function suscribir() {
   
   emailInput.value = '';
 }
+
+const agregarCarritoBtns = document.querySelectorAll('.agregar-carrito');
+const carritoLista = document.getElementById('lista-carrito');
+const carritoTotal = document.getElementById('total-carrito');
+const carrito = document.getElementById('carrito');
+const carritoImagen = document
