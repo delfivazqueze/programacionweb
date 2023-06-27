@@ -22,7 +22,7 @@ body {
     text-decoration: none;
     color: white;
 }
-.botones {
+#botones {
     width: 50px;
     height: 50px;
 }
@@ -34,4 +34,80 @@ body {
     padding: 5px;
     font-weight: bold;
     width: 10%;
+}
+
+.pdf {
+    display: flex;
+    justify-content: center;
+}
+
+.precio {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+h4 {
+    margin: 5px;
+    background-color: rgb(87, 121, 172);
+    padding: 5px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.carrito-imagen {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#carrito {
+    display: none;
+    background-color: #f5f5f5;
+    padding: 20px;
+    text-align: left;
+}
+
+#carrito h2 {
+    margin-top: 0;
+}
+
+#carrito ul {
+    list-style: none;
+    padding: 0;
+}
+
+#carrito ul li {
+    margin-bottom: 10px;
+}
+
+#carrito p {
+    font-weight: bold;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+img {
+    width: 50px;
+    height: 50px;
 }

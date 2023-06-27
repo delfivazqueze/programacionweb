@@ -13,18 +13,93 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@1,300&display=swap" rel="stylesheet">
         <div><a class="titulo" href="/index.html"><h1>ARMÁ TU ALMUERZO</h1></a></div>
-        <div><img class="botones" src="/Imagenes/Iniciar-sesion.png" alt="Mi Cuenta"> <img class="botones" src="/Imagenes/Carrito.png" alt="Carrito"></div>
+        <div><img class="botones" src="/Imagenes/Iniciar-sesion.png" alt="Mi Cuenta"><img class="carrito-imagen" alt="Carrito de compras" id="botones" src="/Imagenes/Carrito.png" alt="Carrito"></div>
     </div>
     <div>
         <a class="linkPpal" href="/Sandwich/sandwich.html">Atrás</a>
     </div>
-    <div class="pedido">
-        <div class="precio"><h4 class="h">Veggies:</h4><p class="h">$4000</p></div>
-        <div><ul><li><div class="listado">Mediterraneo<h1>º</h1></div></li><li><div class="listado">California<h1>º</h1></div></li><li><div class="listado">Mediterraneo en pita<h1>º</h1></div></li></ul></div>
-        <div class="precio"><h4 class="h">Vegan:</h4><p class="h">$4000</p></div>
-        <div><ul><li><div class="listado">Thai<h1>º</h1></div></li></ul></div>
-        <div class="precio"><h4 class="h">Variado:</h4><p class="h">$5000</p></div>
-        <div><ul><li><div class="listado">Gourmet<h1>º</h1></div></li><li><div class="listado">Mediterraneo (pollo)<h1>º</h1></div></li><li><div class="listado">California (pescado)<h1>º</h1></div></li></ul></div>
+    <div class="pdf">
+        <embed src="/Menues/SandwichMenu.pdf" type="application/pdf" width="100%" height="600px">
     </div>
+    <div class="container">
+        <div class="menu">
+          <div>
+            <div class="precio"><h4>Veggies:</h4></div>
+            <ul>
+              <li><button class="agregar-carrito" data-nombre="Mediterraneo" data-precio="4000">Mediterraneo</button></li>
+              <li><button class="agregar-carrito" data-nombre="California" data-precio="4000">California</button></li>
+              <li><button class="agregar-carrito" data-nombre="Mediterraneo en pita" data-precio="4000">Mediterraneo en pita</button></li>
+            </ul>
+          </div>
+          
+          <div>
+            <div class="precio"><h4>Vegan:</h4></div>
+            <ul>
+              <li><button class="agregar-carrito" data-nombre="Thai" data-precio="4000">Thai</button></li>
+            </ul>
+          </div>
+          
+          <div>
+            <div class="precio"><h4>Variado:</h4></div>
+            <ul>
+              <li><button class="agregar-carrito" data-nombre="Griega" data-precio="5000">Gourmet</button></li>
+              <li><button class="agregar-carrito" data-nombre="Cesar" data-precio="5000">Mediterraneo (pollo)</button></li>
+              <li><button class="agregar-carrito" data-nombre="Tailandesa" data-precio="5000">Baja California</button></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div id="carrito">
+          <h2>Carrito de Compras (Terminá tu pedido por wpp!)</h2>
+          <ul id="lista-carrito"></ul>
+          <p id="total-carrito">Total: $0</p>
+        </div>
+      </div>
+
+    <a href="https://api.whatsapp.com/send?phone=5491135901214" target="_blank" class="whatsapp-button">
+    <img src="/Imagenes/whatsapp.png" alt="WhatsApp">
+    </a>
+
+  <script>
+    // Obtener elementos del DOM
+    const agregarCarritoBtns = document.querySelectorAll('.agregar-carrito');
+    const carritoLista = document.getElementById('lista-carrito');
+    const carritoTotal = document.getElementById('total-carrito');
+    const carrito = document.getElementById('carrito');
+    const carritoImagen = document.querySelector('.carrito-imagen');
+
+    // Agregar eventos de clic a los botones de agregar al carrito
+    agregarCarritoBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Obtener datos del producto
+        const nombreProducto = btn.dataset.nombre;
+        const precioProducto = parseInt(btn.dataset.precio);
+
+        // Crear elemento de lista para el carrito
+        const nuevoItem = document.createElement('li');
+        nuevoItem.textContent = `${nombreProducto} - $${precioProducto}`;
+
+        // Agregar item al carrito
+        carritoLista.appendChild(nuevoItem);
+
+        // Actualizar total del carrito
+        const totalActual = parseInt(carritoTotal.textContent.replace(/\D/g, ''));
+        const nuevoTotal = totalActual + precioProducto;
+        carritoTotal.textContent = `Total: $${nuevoTotal}`;
+
+        // Mostrar carrito
+        carrito.style.display = 'block';
+      });
+    });
+
+    // Evento de clic en la imagen del carrito para mostrar/ocultar
+    carritoImagen.addEventListener('click', () => {
+      if (carrito.style.display === 'block') {
+        carrito.style.display = 'none';
+      } else {
+        carrito.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>

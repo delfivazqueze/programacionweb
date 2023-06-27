@@ -12,11 +12,93 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Ysabeau:ital,wght@1,300&display=swap" rel="stylesheet">
         <div><a class="titulo" href="/index.html"><h1>ARMÁ TU ALMUERZO</h1></a></div>
-        <div><img class="botones" src="/Imagenes/Iniciar-sesion.png" alt="Mi Cuenta"> <img class="botones" src="/Imagenes/Carrito.png" alt="Carrito"></div>
+        <div><img class="botones" src="/Imagenes/Iniciar-sesion.png" alt="Mi Cuenta"><img class="carrito-imagen" alt="Carrito de compras" id="botones" src="/Imagenes/Carrito.png" alt="Carrito"></div>
     </div>
     <div>
         <a class="linkPpal" href="/Bowl/Bowl.html">Atrás</a>
     </div>
-    <h1>bowl menu</h1>
+    <div class="pdf">
+        <embed src="/Menues/BowlMenu.pdf" type="application/pdf" width="100%" height="600px">
+    </div>
+    <div class="container">
+        <div class="menu">
+          <div>
+            <div class="precio"><h4>Veggies:</h4></div>
+            <ul>
+              <li><button class="agregar-carrito" data-nombre="Tricolor" data-precio="3800">Tricolor</button></li>
+              <li><button class="agregar-carrito" data-nombre="Hawaiano" data-precio="3800">Hawaiano</button></li>
+              <li><button class="agregar-carrito" data-nombre="Mexicano" data-precio="3800">Mexicano</button></li>
+            </ul>
+          </div>
+          
+          <div>
+            <div class="precio"><h4>Vegan:</h4></div>
+            <ul>
+              <li><button class="agregar-carrito" data-nombre="Thai" data-precio="3800">Thai</button></li>
+            </ul>
+          </div>
+          
+          <div>
+            <div class="precio"><h4>Variado:</h4></div>
+            <ul>
+              <li><button class="agregar-carrito" data-nombre="Argentina" data-precio="4800">Argentina</button></li>
+              <li><button class="agregar-carrito" data-nombre="Gourmet" data-precio="4800">Gourmet</button></li>
+              <li><button class="agregar-carrito" data-nombre="Japones" data-precio="4800">Japones</button></li>
+            </ul>
+          </div>
+        </div>
+        
+        <div id="carrito">
+          <h2>Carrito de Compras (Terminá tu pedido por wpp!)</h2>
+          <ul id="lista-carrito"></ul>
+          <p id="total-carrito">Total: $0</p>
+        </div>
+      </div>
+
+    <a href="https://api.whatsapp.com/send?phone=5491135901214" target="_blank" class="whatsapp-button">
+    <img src="/Imagenes/whatsapp.png" alt="WhatsApp">
+    </a>
+
+  <script>
+    // Obtener elementos del DOM
+    const agregarCarritoBtns = document.querySelectorAll('.agregar-carrito');
+    const carritoLista = document.getElementById('lista-carrito');
+    const carritoTotal = document.getElementById('total-carrito');
+    const carrito = document.getElementById('carrito');
+    const carritoImagen = document.querySelector('.carrito-imagen');
+
+    // Agregar eventos de clic a los botones de agregar al carrito
+    agregarCarritoBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Obtener datos del producto
+        const nombreProducto = btn.dataset.nombre;
+        const precioProducto = parseInt(btn.dataset.precio);
+
+        // Crear elemento de lista para el carrito
+        const nuevoItem = document.createElement('li');
+        nuevoItem.textContent = `${nombreProducto} - $${precioProducto}`;
+
+        // Agregar item al carrito
+        carritoLista.appendChild(nuevoItem);
+
+        // Actualizar total del carrito
+        const totalActual = parseInt(carritoTotal.textContent.replace(/\D/g, ''));
+        const nuevoTotal = totalActual + precioProducto;
+        carritoTotal.textContent = `Total: $${nuevoTotal}`;
+
+        // Mostrar carrito
+        carrito.style.display = 'block';
+      });
+    });
+
+    // Evento de clic en la imagen del carrito para mostrar/ocultar
+    carritoImagen.addEventListener('click', () => {
+      if (carrito.style.display === 'block') {
+        carrito.style.display = 'none';
+      } else {
+        carrito.style.display = 'block';
+      }
+    });
+  </script>
 </body>
 </html>
