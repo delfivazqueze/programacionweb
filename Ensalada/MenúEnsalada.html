@@ -21,70 +21,86 @@
     <div class="pdf">
         <embed src="/Menues/EnsaladaMenu.pdf" type="application/pdf" width="100%" height="600px">
     </div>
-    <div class="pedido">
-        <div class="precio"><h4 class="h">Veggies:</h4><p class="h">$3500</p></div>
-        <div class="productos">
-            <div class="producto">
-            <h3>Verde y Fresca</h3>
-            <p>$3500</p>
-            <input type="number" class="cantidad" min="0" value="0">
-            <button class="agregar-carrito" data-nombre="Verde y Fresca" data-precio="10">Agregar al carrito</button>
-            </div>
-            
-            <div class="producto">
-            <h3>Tropical</h3>
-            <p>$3500</p>
-            <input type="number" class="cantidad" min="0" value="0">
-            <button class="agregar-carrito" data-nombre="Troical" data-precio="15">Agregar al carrito</button>
-            </div>
-            
-            <div class="producto">
-            <h3>Caprese</h3>
-            <p>$3500</p>
-            <input type="number" class="cantidad" min="0" value="0">
-            <button class="agregar-carrito" data-nombre="Caprese" data-precio="20">Agregar al carrito</button>
-            </div>
+    <div class="container">
+        <div class="menu">
+          <div>
+            <div class="precio"><h4>Veggies:</h4></div>
+            <ul>
+              <li><button class="agregar-carrito" data-nombre="Verde y Fresca" data-precio="3500">Verde y Fresca</button></li>
+              <li><button class="agregar-carrito" data-nombre="Tropical" data-precio="3500">Tropical</button></li>
+              <li><button class="agregar-carrito" data-nombre="Caprese" data-precio="3500">Caprese</button></li>
+            </ul>
+          </div>
+          
+          <div>
+            <div class="precio"><h4>Vegan:</h4></div>
+            <ul>
+              <li><button class="agregar-carrito" data-nombre="Arabe" data-precio="3500">Arabe</button></li>
+            </ul>
+          </div>
+          
+          <div>
+            <div class="precio"><h4>Variado:</h4></div>
+            <ul>
+              <li><button class="agregar-carrito" data-nombre="Griega" data-precio="4500">Griega</button></li>
+              <li><button class="agregar-carrito" data-nombre="Cesar" data-precio="4500">Cesar</button></li>
+              <li><button class="agregar-carrito" data-nombre="Tailandesa" data-precio="4500">Tailandesa</button></li>
+            </ul>
+          </div>
         </div>
-       <div class="precio"><h4 class="h">Vegan:</h4><p class="h">$3500</p></div>
-       <div class="productos">
-        <div class="producto">
-            <h3>Arabe</h3>
-            <p>$3500</p>
-            <input type="number" class="cantidad" min="0" value="0">
-            <button class="agregar-carrito" data-nombre="Arabe" data-precio="10">Agregar al carrito</button>
-            </div>
-        </div> 
-        <div class="precio"><h4 class="h">Variado:</h4><p class="h">$4500</p></div>
-        <div class="productos">
-            <div class="producto">
-            <h3>Griega</h3>
-            <p>$4500</p>
-            <input type="number" class="cantidad" min="0" value="0">
-            <button class="agregar-carrito" data-nombre="Griega" data-precio="10">Agregar al carrito</button>
-            </div>
-            
-            <div class="producto">
-            <h3>Cesar</h3>
-            <p>$4500</p>
-            <input type="number" class="cantidad" min="0" value="0">
-            <button class="agregar-carrito" data-nombre="Cesar" data-precio="15">Agregar al carrito</button>
-            </div>
-            
-            <div class="producto">
-            <h3>Tailandesa</h3>
-            <p>$4500</p>
-            <input type="number" class="cantidad" min="0" value="0">
-            <button class="agregar-carrito" data-nombre="Tailandesa" data-precio="20">Agregar al carrito</button>
-            </div>
+        
+        <div id="carrito">
+          <h2>Carrito de Compras (Terminá tu pedido por wpp!)</h2>
+          <ul id="lista-carrito"></ul>
+          <p id="total-carrito">Total: $0</p>
         </div>
-    </div>
+      </div>
 
-    <div id="carrito" class="carrito">
-        <h2>Carrito de compras</h2>
-        <ul id="lista-carrito"></ul>
-        <p id="total-carrito">Total: $0</p>
-    </div>
-    <script src="script.js"></script>
+    <a href="https://api.whatsapp.com/send?phone=5491135901214" target="_blank" class="whatsapp-button">
+    <img src="/Imagenes/whatsapp.png" alt="WhatsApp">
+    </a>
+
+  <script>
+    // Obtener elementos del DOM
+    const agregarCarritoBtns = document.querySelectorAll('.agregar-carrito');
+    const carritoLista = document.getElementById('lista-carrito');
+    const carritoTotal = document.getElementById('total-carrito');
+    const carrito = document.getElementById('carrito');
+    const carritoImagen = document.querySelector('.carrito-imagen');
+
+    // Agregar eventos de clic a los botones de agregar al carrito
+    agregarCarritoBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        // Obtener datos del producto
+        const nombreProducto = btn.dataset.nombre;
+        const precioProducto = parseInt(btn.dataset.precio);
+
+        // Crear elemento de lista para el carrito
+        const nuevoItem = document.createElement('li');
+        nuevoItem.textContent = `${nombreProducto} - $${precioProducto}`;
+
+        // Agregar item al carrito
+        carritoLista.appendChild(nuevoItem);
+
+        // Actualizar total del carrito
+        const totalActual = parseInt(carritoTotal.textContent.replace(/\D/g, ''));
+        const nuevoTotal = totalActual + precioProducto;
+        carritoTotal.textContent = `Total: $${nuevoTotal}`;
+
+        // Mostrar carrito
+        carrito.style.display = 'block';
+      });
+    });
+
+    // Evento de clic en la imagen del carrito para mostrar/ocultar
+    carritoImagen.addEventListener('click', () => {
+      if (carrito.style.display === 'block') {
+        carrito.style.display = 'none';
+      } else {
+        carrito.style.display = 'block';
+      }
+    });
+  </script>
     
 </body>
 </html>
