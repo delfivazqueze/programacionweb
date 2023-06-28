@@ -21,5 +21,91 @@
     <div class="frase">
         <p>Los mejores wraps diseñados especialmente por y para vos! :)</p>
     </div>
+    <div class="general">
+        <div class="dropdown">
+            <button class="dropbtn">Tortilla</button>
+            <div class="dropdown-content">
+                <a href="#" class="option" data-name="Trigo" data-price="500">Trigo</a>
+                <a href="#" class="option" data-name="Maiz" data-price="500">Maiz</a>
+                <a href="#" class="option" data-name="Integral" data-price="500">Integral</a>
+                <a href="#" class="option" data-name="Arroz (sin gluten)" data-price="500">Arroz (sin gluten)</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Toppings</button>
+            <div class="dropdown-content">
+              <a href="#" class="option" data-name="Salsa de yogur y eneldo" data-price="800">Salsa de yogur y eneldo</a>
+              <a href="#" class="option" data-name="Guacamole" data-price="800">Guacamole</a>
+              <a href="#" class="option" data-name="Salsa picante" data-price="800">Salsa picante</a>
+              <a href="#" class="option" data-name="Chutney de mango" data-price="800">Chutney de mango</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Proteína</button>
+            <div class="dropdown-content">
+              <a href="#" class="option" data-name="Tofu marinado y salteado" data-price="700">Tofu marinado y salteado</a>
+              <a href="#" class="option" data-name="Falafel" data-price="700">Falafel</a>
+              <a href="#" class="option" data-name="Pollo a la parrilla en tiras" data-price="700">Pollo a la parrilla en tiras</a>
+              <a href="#" class="option" data-name="Carne de res asada en rodajas" data-price="700">Carne de res asada en rodajas</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Verduras</button>
+            <div class="dropdown-content">
+              <a href="#" class="option" data-name="Lechuga en juliana" data-price="750">Lechuga en juliana</a>
+              <a href="#" class="option" data-name="Zanahoria rallada" data-price="750">Zanahoria rallada</a>
+              <a href="#" class="option" data-name="Tomate en rodajas" data-price="750">Tomate en rodajas</a>
+              <a href="#" class="option" data-name="Cebolla morada en tiras" data-price="750">Cebolla morada en tiras</a>
+            </div>
+        </div>
+        </div>
+    
+        <div class="cart">
+            <h2>Carrito de Compras (Terminá tu pedido por wpp!)</h2>
+            <ul id="carrito-lista"></ul>
+            <p id="carrito-total">Total: $0</p>
+        </div>
+          
+        <a href="https://api.whatsapp.com/send?phone=5491135901214" target="_blank" class="whatsapp-button">
+        <img src="/Imagenes/whatsapp.png" alt="WhatsApp">
+        </a>
+    
+        <script>
+        const options = document.querySelectorAll('.option');
+        const carritoLista = document.getElementById('carrito-lista');
+        const carritoTotal = document.getElementById('carrito-total');
+    
+        let carrito = [];
+    
+        options.forEach((option) => {
+            option.addEventListener('click', () => {
+            const nombre = option.dataset.name;
+            const precio = parseInt(option.dataset.price);
+    
+            const producto = { nombre, precio };
+            carrito.push(producto);
+    
+            mostrarCarrito();
+            });
+        });
+    
+        function mostrarCarrito() {
+            carritoLista.innerHTML = '';
+            let total = 0;
+    
+            carrito.forEach((producto) => {
+            const itemCarrito = document.createElement('li');
+            itemCarrito.textContent = producto.nombre;
+            carritoLista.appendChild(itemCarrito);
+    
+            total += producto.precio;
+            });
+    
+            carritoTotal.textContent = `Total: $${total}`;
+        }
+        </script>
 </body>
 </html>

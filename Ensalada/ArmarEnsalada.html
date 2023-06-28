@@ -21,4 +21,92 @@
     <div class="frase">
         <p>Las mejores ensaladas diseñados especialmente por y para vos! :)</p>
     </div>
+    
+    <div class="general">
+        <div class="dropdown">
+            <button class="dropbtn">Base</button>
+            <div class="dropdown-content">
+                <a href="#" class="option" data-name="Mezcla de lechugas" data-price="500">Mezcla de lechugas</a>
+                <a href="#" class="option" data-name="Espinacas frescas" data-price="500">Espinacas frescas</a>
+                <a href="#" class="option" data-name="Rúcula" data-price="500">Rúcula</a>
+                <a href="#" class="option" data-name="Hojas de kale" data-price="500">Hojas de kale</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Toppings</button>
+            <div class="dropdown-content">
+              <a href="#" class="option" data-name="Nueces picadas" data-price="800">Nueces picadas</a>
+              <a href="#" class="option" data-name="Arándanos frescos" data-price="800">Arándanos frescos</a>
+              <a href="#" class="option" data-name="Queso feta desmenuzado" data-price="800">Queso feta desmenuzado</a>
+              <a href="#" class="option" data-name="Semillas de girasol tostadas" data-price="800">Semillas de girasol tostadas</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Proteína</button>
+            <div class="dropdown-content">
+              <a href="#" class="option" data-name="Tofu marinado y a la parrilla" data-price="700">Tofu marinado y a la parrilla</a>
+              <a href="#" class="option" data-name="Garbanzos tostados" data-price="700">Garbanzos tostados</a>
+              <a href="#" class="option" data-name="Pollo a la parrilla en tiras" data-price="700">Pollo a la parrilla en tiras</a>
+              <a href="#" class="option" data-name="Tiras de carne asada" data-price="700">Tiras de carne asada</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Carbohidratos</button>
+            <div class="dropdown-content">
+              <a href="#" class="option" data-name="Quinoa cocida" data-price="750">Quinoa cocida</a>
+              <a href="#" class="option" data-name="Pasta integral" data-price="750">Pasta integral</a>
+              <a href="#" class="option" data-name="Arroz yamani" data-price="750">Arroz yamani</a>
+              <a href="#" class="option" data-name="Batatas asadas" data-price="750">Batatas asadas</a>
+            </div>
+        </div>
+        </div>
+    
+        <div class="cart">
+            <h2>Carrito de Compras (Terminá tu pedido por wpp!)</h2>
+            <ul id="carrito-lista"></ul>
+            <p id="carrito-total">Total: $0</p>
+        </div>
+          
+        <a href="https://api.whatsapp.com/send?phone=5491135901214" target="_blank" class="whatsapp-button">
+        <img src="/Imagenes/whatsapp.png" alt="WhatsApp">
+        </a>
+    
+        <script>
+        const options = document.querySelectorAll('.option');
+        const carritoLista = document.getElementById('carrito-lista');
+        const carritoTotal = document.getElementById('carrito-total');
+    
+        let carrito = [];
+    
+        options.forEach((option) => {
+            option.addEventListener('click', () => {
+            const nombre = option.dataset.name;
+            const precio = parseInt(option.dataset.price);
+    
+            const producto = { nombre, precio };
+            carrito.push(producto);
+    
+            mostrarCarrito();
+            });
+        });
+    
+        function mostrarCarrito() {
+            carritoLista.innerHTML = '';
+            let total = 0;
+    
+            carrito.forEach((producto) => {
+            const itemCarrito = document.createElement('li');
+            itemCarrito.textContent = producto.nombre;
+            carritoLista.appendChild(itemCarrito);
+    
+            total += producto.precio;
+            });
+    
+            carritoTotal.textContent = `Total: $${total}`;
+        }
+        </script>
+</body>
 </html>

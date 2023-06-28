@@ -22,5 +22,92 @@
         <p>Los mejores bowls diseñados especialmente por y para vos! :)</p>
     </div>
 
+    <div class="general">
+        <div class="dropdown">
+            <button class="dropbtn">Base</button>
+            <div class="dropdown-content">
+                <a href="#" class="option" data-name="Arroz integral" data-price="500">Arroz integral</a>
+                <a href="#" class="option" data-name="Quinoa" data-price="500">Quinoa</a>
+                <a href="#" class="option" data-name="Espaguetis de calabacín (zoodles)" data-price="500">Espaguetis de calabacín (zoodles)</a>
+                <a href="#" class="option" data-name="Ensalada de col rizada (kale)" data-price="500">Ensalada de col rizada (kale)</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Toppings</button>
+            <div class="dropdown-content">
+              <a href="#" class="option" data-name="Aguacate en rodajas" data-price="800">Aguacate en rodajas</a>
+              <a href="#" class="option" data-name="Edamame" data-price="800">Edamame</a>
+              <a href="#" class="option" data-name="Salsa de cacahuete (maní)" data-price="800">Salsa de cacahuete (maní)</a>
+              <a href="#" class="option" data-name="Almendras fileteadas" data-price="800">Almendras fileteadas</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="dropbtn">Proteína</button>
+            <div class="dropdown-content">
+              <a href="#" class="option" data-name="Tofu marinado y salteado" data-price="700">Tofu marinado y salteado</a>
+              <a href="#" class="option" data-name="Garbanzos especiados y asado" data-price="700">Garbanzos especiados y asado</a>
+              <a href="#" class="option" data-name="Pollo a la parrilla en tiras" data-price="700">Pollo a la parrilla en tiras</a>
+              <a href="#" class="option" data-name="Salmón a la plancha en filete" data-price="700">Salmón a la plancha en filete</a>
+            </div>
+        </div>
+        
+        <div class="dropdown">
+            <button class="dropbtn">Verduras</button>
+            <div class="dropdown-content">
+              <a href="#" class="option" data-name="Pepino en rodajas" data-price="750">Pepino en rodajas</a>
+              <a href="#" class="option" data-name="Zanahoria en tiras" data-price="750">Zanahoria en tiras</a>
+              <a href="#" class="option" data-name="Espárragos asados" data-price="750">Espárragos asados</a>
+              <a href="#" class="option" data-name="Remolacha rallada" data-price="750">Remolacha rallada</a>
+            </div>
+        </div>
+        </div>
+    
+        <div class="cart">
+            <h2>Carrito de Compras (Terminá tu pedido por wpp!)</h2>
+            <ul id="carrito-lista"></ul>
+            <p id="carrito-total">Total: $0</p>
+        </div>
+          
+        <a href="https://api.whatsapp.com/send?phone=5491135901214" target="_blank" class="whatsapp-button">
+        <img src="/Imagenes/whatsapp.png" alt="WhatsApp">
+        </a>
+    
+        <script>
+        const options = document.querySelectorAll('.option');
+        const carritoLista = document.getElementById('carrito-lista');
+        const carritoTotal = document.getElementById('carrito-total');
+    
+        let carrito = [];
+    
+        options.forEach((option) => {
+            option.addEventListener('click', () => {
+            const nombre = option.dataset.name;
+            const precio = parseInt(option.dataset.price);
+    
+            const producto = { nombre, precio };
+            carrito.push(producto);
+    
+            mostrarCarrito();
+            });
+        });
+    
+        function mostrarCarrito() {
+            carritoLista.innerHTML = '';
+            let total = 0;
+    
+            carrito.forEach((producto) => {
+            const itemCarrito = document.createElement('li');
+            itemCarrito.textContent = producto.nombre;
+            carritoLista.appendChild(itemCarrito);
+    
+            total += producto.precio;
+            });
+    
+            carritoTotal.textContent = `Total: $${total}`;
+        }
+        </script>
+
 </body>
 </html>
