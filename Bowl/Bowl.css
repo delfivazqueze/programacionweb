@@ -91,3 +91,25 @@ li {
     text-decoration: none;
     color: white;
 }
+
+@media screen and (max-width: 1100px) {
+    .Header { 
+        font-size: 12px;
+    }
+    .botones {
+        width: 35px;
+        height: 35px;
+    }
+
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .formato {
+        width: 400px;
+    }
+
+    .Conta-Prod {
+        font-size: 12px;
+    }
+}
